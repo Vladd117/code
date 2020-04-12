@@ -352,7 +352,6 @@ game.ball = {
         } else { return false; }
 
     },
-
     collideCanvas() {
         let x = this.x + this.dx;
         let y = this.y + this.dy;
