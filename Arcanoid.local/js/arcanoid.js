@@ -157,6 +157,7 @@ let game = {
         this.ball.move();
 
 
+
     },
     restart() {
         //alert(this.i);
