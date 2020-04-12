@@ -1,0 +1,26 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+.field {
+    margin: auto;
+    margin-top: 3em;
+    display: block;
+    text-align: center;
+    width: 800px;
+    min-height: 400px;
+    background-color: #a88147;
+}
+
+.first-button {
+    display: inline-block;
+    font-size: 30px;
+    color: burlywood;
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+    background-color: black;
+    border: 0;
+}

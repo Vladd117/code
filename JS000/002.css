@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif; /* Рубленый шрифт */ 
+    font-size: 110%; /* Размер шрифта в процентах */ 
+    position: relative; /* Относительное позиционирование */ 
+    top: 5px; /* Сдвиг сверху */
+    }
+h1 {
+    font-family: Arial, sans-serif; /* Рубленый шрифт */ 
+    font-size: 150%; /* Размер шрифта в процентах */ 
+    position: relative; /* Относительное позиционирование */ 
+    top: 5px; /* Сдвиг сверху */
+}
+.butt {
+    width: 120px; /*Ширина кнопки*/
+    height: 38px; /*Высота кнопки*/
+    /*text-decoration: none;*/
+    padding-top: 6px;
+    border-radius: 0px; /*Скругление углов*/
+    border-width: 1px;
+    border: #c07644;
+    color: #314f6b;
+    text-align: center;
+    font: normal 16px arial;
+}
+.butt:not(.active) {
+    transition: background-color 300ms linear;
+    box-shadow: inset 0 -1px 0px rgba(109, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.3), 0 3px 3px 0 rgba(0, 0, 0, 0.3);
+    background-color: #c5e5ff; /*Градиент плашки кнопки при наведении курсора*/
+}
+.butt:not(.active):focus {
+    transition: color 300ms linear, background-color 300ms linear;
+    background-color: #ff8d41; /*Градиент плашки кнопки при нажатии*/
+    color: rgb(155, 44, 0);
+    }
+.butt:not(:hover) {
+      transition: 1s;
+      background-color: #90cbfc; /*Градиент плашки кнопки */
+  }
+
+  *{
+    outline: none !important /*Убирает рамки вокруг активных элементов*/
+    }
