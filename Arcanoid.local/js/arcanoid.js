@@ -301,9 +301,7 @@ game.platform = {
         if (rx > game.width || lx < 0) {
             this.dx = 0;
         }
-
     },
-
 };
 game.ball = {
     x: 496,
