@@ -4,6 +4,7 @@ const KEYS = {
     SPACE: 32,
 };
 
+
 let game = {
     //platform: null,
     level: 1,
