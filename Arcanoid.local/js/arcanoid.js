@@ -3,8 +3,6 @@ const KEYS = {
     RIGHT: 39,
     SPACE: 32,
 };
-
-
 let game = {
     //platform: null,
     level: 1,
@@ -189,15 +187,21 @@ let game = {
             //console.log(block);
             if (this.ball.collide(block) == "dx" && block.active == true) {
                 this.ball.bumpBlock(block, "dx");
+                this.sounds.bump02.pause();
+                this.sounds.bump02.currentTime = 0;
                 this.sounds.bump02.play();
 
             } else if (this.ball.collide(block) == "dy" && block.active == true) {
                 this.ball.bumpBlock(block, "dy");
+                this.sounds.bump02.pause();
+                this.sounds.bump02.currentTime = 0;
                 this.sounds.bump02.play();
             }
         }
         if (this.ball.collide(this.platform)) {
             this.ball.bumpPlatform(this.platform);
+            this.sounds.bump01.pause();
+            this.sounds.bump01.currentTime = 0;
             this.sounds.bump01.play();
         }
     },
@@ -353,14 +357,21 @@ game.ball = {
         let y = this.y + this.dy;
         if (x + this.width > game.width) {
             this.dx *= -1;
+            game.sounds.bump03.pause();
+            game.sounds.bump03.currentTime = 0;
             game.sounds.bump03.play();
         }
         if (x < 0) {
             this.dx *= -1;
+            game.sounds.bump03.pause();
+            game.sounds.bump03.currentTime = 0;
             game.sounds.bump03.play();
         }
         if (y < 0) {
             this.dy *= -1;
+
+            game.sounds.bump03.pause();
+            game.sounds.bump03.currentTime = 0;
             game.sounds.bump03.play();
         }
         if (y + this.height > game.height + 34) {
