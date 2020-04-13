@@ -129,7 +129,10 @@ let game = {
             "/" + this.block.blocks.length, 25, 35);
 
         this.ctx.font = "bold 30px sans-serif";
-        this.ctx.fillStyle = "#FF4444";
+        this.ctx.fillStyle = "#ff4444";
+        if (this.gameMassage == "Next level") {
+            this.ctx.fillStyle = "#44ff44";
+        };
         this.ctx.fillText(this.gameMassage, 460, 300);
 
 
