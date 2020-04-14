@@ -38,7 +38,32 @@ let color = window.setInterval(() => {
         //red = 0;
     }
 }, 30);
-console.log(i);
+
+let circle = document.querySelectorAll('.circle');
+circle.forEach((item, i, cir) => {
+    item.style.backgroundColor = "blue";
+});
+
+let div = document.createElement('div'),
+    div2 = document.createElement('div'),
+    div3 = document.createElement('div'),
+    text = document.createTextNode('Some Text...');
+
+div.classList.add('black');
+document.body.appendChild(div);
+
+div.innerHTML = '<h1>Hello, my Friend!</h1>';
+div2.textContent = "Hello!"
+
+div2.classList.add('black');
+div3.classList.add('black');
+let wrapper = document.querySelector('.wrapper');
+wrapper.insertBefore(div3, circle[0]);
+wrapper.appendChild(div2);
+wrapper.removeChild(circle[3]);
+
+
+console.log(div);
 
 
 //console.log(red);
