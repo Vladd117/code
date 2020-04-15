@@ -1,7 +1,3 @@
-let button1 = {
-    beckColor: 'black',
-    textColor: 'burlywood'
-};
 let newColor = function(color) {
     let element = document.getElementById("btn01");
     element.style.backgroundColor = color;
@@ -53,7 +49,7 @@ div.classList.add('black');
 document.body.appendChild(div);
 
 div.innerHTML = '<h1>Hello, my Friend!</h1>';
-div2.textContent = "Hello!"
+div2.textContent = "Hello!";
 
 div2.classList.add('black');
 div3.classList.add('black');
@@ -62,8 +58,56 @@ wrapper.insertBefore(div3, circle[0]);
 wrapper.appendChild(div2);
 wrapper.removeChild(circle[3]);
 
+//-------------------------------------------------------------------
 
-console.log(div);
+let button = document.querySelectorAll('#abtn');
+// button[0].onclick = function() {
+//     alert('Don`t touch the button!');
+// };
 
+// button[item].addEventListener('click', (event) => {
+// 	let target = event.target;
+// 	console.log('Событие: ' + event.type + ' с элементом: ' + event.target);
+// });
 
-//console.log(red);
+// button[item].addEventListener('mouseover', () => {
+// 	button[0].style.backgroundColor = "rgb(220, 150, 0)";
+// 	button[0].style.transform = "scale(1.2)";
+// 	button[0].style.transition = "0.5s";
+
+// });
+// button[item].addEventListener('mouseout', () => {
+// 	button[0].style.backgroundColor = "rgb(202, 74, 0)";
+// 	button[0].style.transform = "scale(1)";
+
+// });
+
+//-------------------------------------------------------------------
+
+button.forEach((item) => {
+    item.addEventListener('click', (event) => {
+        //let target = event.target;
+        console.log('Событие: ' + event.type + ' с элементом: ' + event.target);
+    });
+
+    item.addEventListener('mouseover', () => {
+        item.style.backgroundColor = "rgb(220, 150, 0)";
+        item.style.transform = "scale(1.2)";
+        item.style.transform = "rotate(5deg)";
+        item.style.transition = "0.5s";
+
+    });
+    item.addEventListener('mouseout', () => {
+        item.style.backgroundColor = "rgb(202, 74, 0)";
+        item.style.transform = "scale(1)";
+        item.style.transform = "rotate(0deg)";
+
+    });
+});
+let link = document.querySelector('a');
+link.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log('Событие: ' + event.type + ' с элементом: ' + event.target);
+});
+
+//console.log(button)
