@@ -60,7 +60,7 @@ wrapper.removeChild(circle[3]);
 
 //-------------------------------------------------------------------
 
-let button = document.querySelectorAll('#abtn');
+let button = document.querySelectorAll('.action-button');
 // button[0].onclick = function() {
 //     alert('Don`t touch the button!');
 // };
