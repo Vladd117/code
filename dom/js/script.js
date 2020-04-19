@@ -91,9 +91,11 @@ button.forEach((item) => {
     });
 
     item.addEventListener('mouseover', () => {
+        let deg = Math.floor(Math.random() * 12 - 7);
+        console.log(deg);
         item.style.backgroundColor = "rgb(220, 150, 0)";
         item.style.transform = "scale(1.2)";
-        item.style.transform = "rotate(5deg)";
+        item.style.transform = "rotate(" + deg + "deg)";
         item.style.transition = "0.5s";
 
     });
@@ -108,6 +110,51 @@ let link = document.querySelector('a');
 link.addEventListener('click', (event) => {
     event.preventDefault();
     console.log('Событие: ' + event.type + ' с элементом: ' + event.target);
+});
+
+let anbtn = document.querySelector('#anbtn'),
+    elem = document.querySelector('#elem'),
+    animBox = document.querySelector('.anim-box');
+
+
+function animat() {
+    let pos = 0;
+    console.log('go' + animBox.clientWidth);
+    let timerID = setInterval(frame, 10);
+
+    function frame() {
+        if (pos == animBox.clientWidth - elem.clientWidth) {
+            clearInterval(timerID);
+        } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+
+        }
+    }
+
+}
+anbtn.addEventListener('click', () => {
+    // console.log(animBox.clientHeight - elem.clientHeight + "px");
+    // console.log(elem.style.top);
+    //anbtn.style.backgroundColor = "black";
+    if (elem.style.top == 0 || elem.style.top == animBox.clientHeight - elem.clientHeight + "px") {
+        animat();
+    }
+
+
+});
+
+let btnBlock = document.querySelector('.button-block'),
+    btns = document.getElementsByTagName('button');
+
+btnBlock.addEventListener('click', (event) => {
+    // if (event.target && event.target.tagName == 'BUTTON' &&
+    //     event.target.classList.contains('frst')
+    if (event.target && event.target.matches('button.frst')) {
+        console.log('ok');
+        console.log(event.target.classList.value);
+    } else { console.log(event.target.classList); }
 });
 
 //console.log(button)

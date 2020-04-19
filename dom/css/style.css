@@ -64,6 +64,60 @@ body {
     outline: 0;
 }
 
+.anim-box {
+    background-color: rgb(235, 235, 235);
+    position: relative;
+    left: 100px;
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+}
+
+.anbtn {
+    display: inline-block;
+    /* position: absolute; */
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(202, 74, 0);
+    border-radius: 10px;
+    border: 2px solid black;
+    outline: 0;
+}
+
+.button-block {
+    height: 3em;
+    line-height: 3em;
+    margin: auto;
+    justify-content: space-between;
+    background-color: crimson;
+}
+
+.button-block button {
+    display: inline-block;
+    border: 0;
+    height: 2em;
+    min-width: 10em;
+    vertical-align: middle;
+    outline: 0;
+    background-color: rgb(255, 196, 0);
+    transition: background-color .5s;
+}
+
+.button-block button:hover {
+    background-color: rgb(149, 252, 32);
+}
+
+#elem {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: rgb(255, 145, 0);
+}
+
 
 /* .action-button:hover {
     transform: scale(1.9);
