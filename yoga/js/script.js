@@ -37,10 +37,10 @@ window.addEventListener('DOMContentLoaded',
 
         // Таймер! ---------------------------------->
 
-        let deadline = '2020-04-23';
+        let deadline = '2020-04-24';
 
         function getTimeRemainig(endTime) {
-            let t = Date.parse(deadline) - Date.parse(new Date()) - 3 * 60 * 60 * 1000,
+            let t = Date.parse(endTime) - Date.parse(new Date()) - 3 * 60 * 60 * 1000,
                 seconds = Math.floor((t / 1000) % 60),
                 minutes = Math.floor((t / 1000 / 60) % 60),
                 hours = Math.floor((t / 1000 / 60 / 60) % 24),
@@ -76,7 +76,22 @@ window.addEventListener('DOMContentLoaded',
                     clearInterval(timeInt);
                 }
             }
-
         }
         setClock('timer', deadline);
+
+        // Модальное окно ----------------------------->
+
+        let more = document.querySelector('.more'),
+            overlay = document.querySelector('.overlay'),
+            close = document.querySelector('.popup-close');
+        more.addEventListener('click', () => {
+            overlay.style.display = "block";
+            more.classList.add('more-splash');
+            document.body.style.overflow = "hidden";
+        });
+        close.addEventListener('click', () => {
+            overlay.style.display = "none";
+            more.classList.remove('more-splash');
+            document.body.style.overflow = "";
+        });
     });
