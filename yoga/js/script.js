@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded',
 
         // Таймер! ---------------------------------->
 
-        let deadline = '2020-04-24';
+        let deadline = '2020-04-26';
 
         function getTimeRemainig(endTime) {
             let t = Date.parse(endTime) - Date.parse(new Date()) - 3 * 60 * 60 * 1000,
@@ -67,10 +67,10 @@ window.addEventListener('DOMContentLoaded',
                 deys.textContent = t.deys;
                 hours.textContent = t.hours;
                 if (t.minutes < 10) {
-                    minutes.textContent = "0" + t.minutes;
+                    minutes.textContent = `0${t.minutes}`;
                 } else { minutes.textContent = t.minutes; }
                 if (t.seconds < 10) {
-                    seconds.textContent = "0" + t.seconds;
+                    seconds.textContent = `0${t.seconds}`;
                 } else { seconds.textContent = t.seconds; }
                 if (t.total <= 0) {
                     clearInterval(timeInt);
