@@ -132,7 +132,7 @@ let game = {
         this.ctx.fillStyle = "#ff4444";
         if (this.gameMassage == "Next level") {
             this.ctx.fillStyle = "#44ff44";
-        };
+        }
         this.ctx.fillText(this.gameMassage, 460, 300);
 
 
