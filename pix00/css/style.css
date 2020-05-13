@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.bg {
+    pointer-events: none;
+    position: relative;
+    background-color: rgb(16, 54, 71);
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    pointer-events: none;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    top: 50%;
+    left: 50%;
+    width: 640px;
+    height: 640px;
+    background-color: rgb(23, 71, 94);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.pix {
+    pointer-events: all;
+    flex-basis: 0;
+    flex-grow: 1;
+    margin: 0px;
+    min-width: 32px;
+    min-height: 32px;
+    max-height: 32px;
+    background-color: rgb(20, 101, 155);
+    border: 1px solid rgb(15, 177, 252);
+    border-radius: 3px;
+}
