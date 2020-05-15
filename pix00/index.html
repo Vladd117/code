@@ -9,9 +9,22 @@
 </head>
 
 <body>
-    <div class="bg">
-        <div class="container"></div>
+
+    <div class="bg"></div>
+    <form class="form" name="frm">
+        <label for="size">Размер блока в пикселях<br>(в диапазоне от 16 до 32 пикселей):</label>
+        <input name="size" id="size" type="number" value="32">
+        <label for="width">Ширина поля в блоках<br>(в диапазоне от 5 до 60 блоков):</label>
+        <input name="width" id="width" type="number" value="30">
+        <label for="heigth">Высота поля в блоках<br>(в диапазоне от 5 до 30 блоков):</label>
+        <input name="heigth" id="heigth" type="number" value="20">
+        <button type="submit">Построить</button>
+    </form>
+    <div id="container">
+        <div class="error er">!!!</div>
+
     </div>
+
 </body>
 <script src="./js/script.js"></script>
 

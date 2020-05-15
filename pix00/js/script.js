@@ -1,49 +1,75 @@
-var container = document.querySelector('.container');
+let container = document.querySelector('#container');
+let button = document.querySelector('button');
+let forms = document.querySelector('.form');
+let error = document.querySelector('.error');
+let form = document.forms.frm;
+//console.log(form);
 
-
-
-for (var i = 0; i < 400; i++) {
-    var pix = document.createElement('div');
-
-    pix.className = 'pix';
-    container.appendChild(pix);
-}
-container.appendChild(pix);
-
-class ElemEvent {
-    constructor(select) {
-        this.elem = document.querySelectorAll(select);
+function varify(size, width, heigth) {
+    let errorText = '';
+    if (size < 16 || size > 32) {
+        errorText = 'Размер блока должен быть в диапазоне от 16 до 32 пикселей! <br>';
     }
-    eventElem(event, callback) {
-        for (var i = 0; i < this.elem.length; i++) {
-            this.elem[i].addEventListener(event, callback, false);
-        }
+    if (width < 5 || width > 60) {
+        errorText += 'Ширина поля должна быть в диапазоне от 5 до 60 блоков! <br>';
     }
+    if (heigth < 5 || heigth > 30) {
+        errorText += 'Высота поля должна быть в диапазоне от 5 до 30 блоков! <br>';
+    }
+    return errorText;
+
 }
 
-var clickPix = new ElemEvent('.container .pix');
-clickPix.eventElem('click', function() {
-    if (this.style.backgroundColor != 'black' && this.style.backgroundColor != 'rgb(10, 70, 90)') {
-        this.style.backgroundColor = 'black';
+function create(size, width, heigth) {
+    for (var i = 0; i < width * heigth; i++) {
+        //console.log('ok');
+        var pix = document.createElement('div');
+        pix.className = 'pix pixel';
+        pix.style.minWidth = size + 'px';
+        pix.style.minHeight = size + 'px';
+        container.style.width = size * width + 'px';
+        container.style.heigth = size * heigth + 'px';
+        container.className = 'container';
+        container.appendChild(pix);
+        //console.log(container.style.heigth);
+    }
+    container.style.transform = 'translateX(-50%) translateY(-50%)';
+}
+button.onclick = function() {
+    event.preventDefault();
+    forms.style.animationName = '';
+    forms.style.animationDuration = '';
+    let size = Math.floor(form.elements.size.value);
+    let width = Math.floor(form.elements.width.value);
+    let heigth = Math.floor(form.elements.heigth.value);
+    let err = varify(size, width, heigth);
+    if (err == '') {
+        error.style.display = 'none';
+        create(size, width, heigth);
+        forms.style.animationName = 'fade';
+        forms.style.animationDuration = '0.5s';
+        console.log(forms.style);
+        forms.style.zIndex = '0';
+        container.style.display = 'flex';
+        setTimeout(function() {
+            forms.style.display = 'none';
+        }, 500);
+        draw();
     } else {
-        this.style.backgroundColor = 'rgb(20, 101, 155)';
+        error.style.display = 'block';
+        error.innerHTML = err;
+        //console.log('error' + error.style);
     }
-});
 
-clickPix.eventElem('mouseover', function() {
-    if (this.style.backgroundColor != 'black' && this.style.backgroundColor != 'rgb(10, 70, 90))') {
-        this.style.backgroundColor = 'rgb(50, 131, 195)';
+
+};
+
+function draw() {
+    let pixel = document.querySelectorAll('.pixel');
+    for (let i = 0; i < pixel.length; i++) {
+        pixel[i].onclick = function() {
+            this.classList.toggle('pix');
+            this.classList.toggle('pix-active');
+        };
     }
-    //console.log(this.style.backgroundColor);
-    if (this.style.backgroundColor == 'black') {
-        this.style.backgroundColor = 'rgb(10, 70, 90)';
-    }
-});
-clickPix.eventElem('mouseout', function() {
-    if (this.style.backgroundColor == 'rgb(50, 131, 195)') {
-        this.style.backgroundColor = 'rgb(20, 101, 155)';
-    } else if (this.style.backgroundColor == 'rgb(10, 70, 90)') {
-        this.style.backgroundColor = 'black';
-    }
-});
-//console.log(clickPix);
+}
