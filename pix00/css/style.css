@@ -2,14 +2,16 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    outline: 0;
 }
 
 .bg {
     pointer-events: none;
-    position: relative;
+    position: fixed;
     background-color: rgb(16, 54, 71);
     min-width: 100%;
     min-height: 100vh;
+    z-index: -3;
 }
 
 .container {
@@ -19,21 +21,121 @@
     flex-wrap: wrap;
     top: 50%;
     left: 50%;
-    width: 640px;
-    height: 640px;
+    z-index: -2;
+    /* width: 0px;
+    height: 0px; */
     background-color: rgb(23, 71, 94);
-    transform: translateX(-50%) translateY(-50%);
+    /* transform: translateX(-50%) translateY(-50%); */
+    animation-name: rise;
+    animation-duration: 1s;
 }
 
-.pix {
+.form {
+    pointer-events: all;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(114, 180, 211);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+    animation-name: rise;
+    animation-duration: 1s;
+}
+
+.form input {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    margin: 5px;
+    display: block;
+    margin: 10px auto;
+}
+
+.form button {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    margin: 5px;
+    color: rgb(179, 232, 253);
+    border: 1px solid rgb(116, 226, 253);
+    border-radius: 10px;
+    background-color: rgb(40, 102, 173);
+    transition: background-color .2s, color .2s;
+}
+
+.form button:hover {
+    background-color: rgb(41, 131, 233);
+    color: rgb(255, 255, 255);
+}
+
+@keyframes rise {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+.error {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    margin: 5px;
+    color: rgb(255, 196, 0);
+    border: 3px solid rgb(255, 196, 0);
+    border-radius: 10px;
+    background-color: rgb(146, 0, 0);
+    top: 10%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+    transition: 1s;
+    animation-name: rise;
+    animation-duration: .5s;
+}
+
+.pixel {
     pointer-events: all;
     flex-basis: 0;
     flex-grow: 1;
     margin: 0px;
-    min-width: 32px;
-    min-height: 32px;
-    max-height: 32px;
+    /* min-width: 32px;
+    min-height: 32px; */
     background-color: rgb(20, 101, 155);
     border: 1px solid rgb(15, 177, 252);
     border-radius: 3px;
+    transition: background-color .1s;
+}
+
+.pix {
+    background-color: rgb(20, 101, 155);
+    transition: background-color .1s;
+}
+
+.pix:hover {
+    background-color: rgb(24, 127, 196);
+}
+
+.pix-active {
+    background-color: rgb(1, 21, 34);
+    transition: background-color .1s;
+}
+
+.pix-active:hover {
+    background-color: rgb(7, 49, 77);
 }
