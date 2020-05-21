@@ -68,6 +68,9 @@ game.snake = {
         }
 
     },
+    hasCell(cell) {
+        return this.cells.find(part => part === cell);
+    },
     getNextCell() {
         let head = this.cells[0];
 
@@ -75,6 +78,6 @@ game.snake = {
 
         let row = head.row + this.direction.row;
         let col = head.col + this.direction.col;
-        return game.board.getCell(row, col);
+        return this.game.board.getCell(row, col);
     },
 };

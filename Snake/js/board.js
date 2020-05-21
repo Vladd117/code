@@ -23,6 +23,17 @@ game.board = {
         };
         return cell;
     },
+    getRandomAvailableCell() {
+        let pool = this.cells.filter(cell => {
+            return !this.game.snake.hasCell(cell);
+        });
+        let index = this.game.random(0, pool.length - 1);
+        return pool[index];
+    },
+    createFood() {
+        let cell = this.getRandomAvailableCell();
+        cell.hasFood = true;
+    },
     getCell(row, col) {
         return this.cells.find(cell => {
             return cell.row === row && cell.col === col;
@@ -31,6 +42,10 @@ game.board = {
     render() {
         this.cells.forEach(cell => {
             this.game.ctx.drawImage(this.game.sprites.cell, cell.x, cell.y);
+            if (cell.hasFood) {
+                this.game.ctx.drawImage(this.game.sprites.food, cell.x, cell.y);
+            }
+
         });
     },
 };
