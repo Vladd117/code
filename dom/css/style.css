@@ -64,6 +64,21 @@ body {
     outline: 0;
 }
 
+.action-button1 {
+    display: inline-block;
+    /* position: absolute; */
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(202, 74, 0);
+    border-radius: 10px;
+    border: 2px solid black;
+    outline: 0;
+    /* transform: translate(50px, 50px); */
+}
+
 .anim-box {
     background-color: rgb(235, 235, 235);
     position: relative;

@@ -170,3 +170,46 @@ let options = {
 };
 console.log(JSON.stringify(options));
 console.log(JSON.parse(JSON.stringify(options)));
+
+let scopeInf = function() {
+    console.log('This scope is: ' + this);
+    console.log(this);
+};
+let obj = {
+    name: 'Vladd',
+};
+let scopeObj = {
+    scp: scopeInf.bind(obj),
+    scopeInfo() {
+        console.log('This scope is: ' + this);
+        console.log(this);
+    },
+    mouseEvent() {
+        let btn = document.querySelector('.action-button1');
+        this.btn = btn;
+        let overColor = 'red';
+        let outColor = 'rgb(202, 74, 0)';
+
+        function over() {
+            this.style.backgroundColor = overColor;
+            this.style.transform = 'translate(2px, 2px)';
+            this.style.color = 'rgb(255, 208, 0)';
+            console.log(this);
+        }
+
+        function out() {
+            this.style.backgroundColor = outColor;
+            this.style.transform = 'translate(0px, 0px)';
+            this.style.color = 'white';
+        }
+        return { over: over, out: out };
+    },
+};
+
+
+scopeObj.scp();
+scopeObj.scopeInfo.bind(obj);
+scopeInf.bind(this);
+let scopeBtn = scopeObj.mouseEvent();
+scopeObj.btn.addEventListener('mouseover', scopeBtn.over);
+scopeObj.btn.addEventListener('mouseout', scopeBtn.out);
