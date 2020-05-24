@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(202, 202, 202);
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.gallery {
+    position: relative;
+    text-align: center;
+}
+
+.gallery-btn {
+    font-size: 25px;
+    background-color: rgb(12, 90, 126);
+    color: cornsilk;
+    border: 2px solid;
+    border-color: rgb(22, 50, 92);
+    border-radius: 20px;
+    padding: .2em 3em;
+    margin: 1em;
+    transition: .2s;
+}
+
+.gallery-btn:hover {
+    border-color: rgb(190, 216, 255);
+    background-color: rgb(24, 129, 199);
+}
+
+.gallery-btn:active {
+    border-color: rgb(235, 79, 7);
+    background-color: rgb(255, 125, 4);
+}
+
+.photo {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navigation {
+    position: absolute;
+    top: 780px;
+    left: 50%;
+    transform: translateX(-50%);
+}
