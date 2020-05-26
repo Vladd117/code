@@ -5,12 +5,27 @@
     outline: 0;
 }
 
+body {
+    z-index: -10;
+}
+
 .bg {
     pointer-events: none;
-    position: fixed;
-    color: azure;
+    color: rgb(248, 225, 149);
     background-color: rgb(16, 54, 71);
     min-width: 100%;
     min-height: 100vh;
-    z-index: -3;
+    text-align: center;
+}
+
+.cont {
+    width: 800px;
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    font-weight: normal;
+    background-color: rgb(11, 37, 49);
+    min-height: 100vh;
+    text-align: left;
+    padding: 2em;
 }

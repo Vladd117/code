@@ -29,7 +29,7 @@ person.sayHelloPerson2();
 person.say();
 person.logInfo.call(person2);
 
-let disp = document.querySelector('.bg');
+let disp = document.querySelector('.cont');
 
 let foo = function(n) {
     let c = n * 9;
@@ -40,4 +40,19 @@ let foo = function(n) {
     return d;
 };
 console.log(foo.prototype);
-disp.innerHTML = (`Result of function ${foo(5)}, function prototype: ${foo.prototype}`);
+disp.innerHTML = (`Result of function 
+${foo(5)}, function prototype: ${foo.prototype} <br><br><br>`);
+
+
+let a = 8;
+for (let i = 0; i < 8; i++) {
+    for (let j = 0; j < 8; j++) {
+        if (a > j) {
+            disp.innerHTML += "&nbsp;";
+        } else {
+            disp.innerHTML += "* ";
+        }
+    }
+    a -= 1;
+    disp.innerHTML += "<br>";
+}
