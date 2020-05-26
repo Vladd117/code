@@ -8,6 +8,7 @@
 .bg {
     pointer-events: none;
     position: fixed;
+    color: azure;
     background-color: rgb(16, 54, 71);
     min-width: 100%;
     min-height: 100vh;
