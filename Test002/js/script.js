@@ -15,8 +15,12 @@ function personLog(person) {
     };
     return logOut.bind(person);
 }
+
+
 let pers1 = personLog(person1);
 let pers2 = personLog(person2);
+
+
 
 pers1();
 pers2();
