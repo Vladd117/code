@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 100px;
+}
+
+.field {
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: bisque;
+}
+
+.excel {
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    background-color: wheat;
+    border: solid rgb(247, 212, 146) 2px;
+}
+
+.snakeBody {
+    background-color: teal;
+    border: solid wheat 8px;
+    border-radius: 50%;
+}
+
+.snakeHead {
+    background-color: rgb(2, 107, 107);
+    border-radius: 50%;
+    border: solid wheat 1px;
+}
+
+.mouse {
+    background-color: rgb(250, 179, 26);
+    border-radius: 50%;
+    border: solid wheat 8px;
+}
+
+.input {
+    margin: auto;
+    margin-top: 20px;
+    font-size: 30px;
+    display: block;
+}
