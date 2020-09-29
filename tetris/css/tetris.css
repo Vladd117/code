@@ -37,3 +37,68 @@ body {
 .set {
     background-color: teal;
 }
+
+.scores {
+    position: relative;
+    margin: 50px auto;
+    width: 500px;
+    font-size: 30px;
+    color: teal;
+    font-weight: bold;
+    background-color: white;
+    text-align: center;
+    bottom: 80%;
+}
+
+.controls {
+    position: fixed;
+    font-size: 25px;
+    top: 10%;
+    left: 75%;
+}
+
+.button {
+    border: 3px solid rgb(31, 73, 68);
+    width: 300px;
+    color: rgb(185, 231, 231);
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 30px 0;
+    cursor: pointer;
+    font-size: 25px;
+    transition: .2s;
+    border-radius: 10px;
+    background-color: teal;
+}
+
+.button:hover {
+    border-radius: 40px;
+    background-color: rgb(6, 148, 148);
+    border: 3px solid rgb(250, 250, 250);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: teal;
+}
+
+.modal {
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    color: teal;
+    font-size: 20px;
+    transform: translateX(-250px);
+    left: 50%;
+    top: 100px;
+    width: 470px;
+    height: 470px;
+    background-color: rgb(200, 245, 226);
+    z-index: 3;
+}
