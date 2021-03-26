@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Lazy Line Painter</title>
+    <meta name="description" content="A modern JS library for SVG path animation">
+
+    <!-- css  -->
+    <style>
+        body,
+        html {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #my {
+            width: 70vw;
+            height: 70vh;
+            position: relative;
+            overflow: visible;
+        }
+    </style>
+
+    <!-- Include lazylinepainter -->
+    <script src="./js/lazy-line-painter-1.9.6.min.js"></script>
+
+    <script type="text/javascript">
+        (function() {
+
+            document.onreadystatechange = () => {
+
+                if (document.readyState === 'complete') {
+
+                    /**
+                     * Setup your Lazy Line element.
+                     * see README file for more settings
+                     */
+
+                    let el = document.querySelector('#my');
+                    let myAnimation = new LazyLinePainter(el, {
+                        "ease": "easeLinear",
+                        "strokeWidth": 0,
+                        "strokeOpacity": 0,
+                        "strokeColor": "#222F3D",
+                        "strokeCap": "square",
+                        "strokeDash": "2, 2"
+                    });
+                    myAnimation.paint();
+                }
+            }
+
+        })();
+    </script>
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="500px" height="709px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+        viewBox="0 0 500 709.46" xmlns:xlink="http://www.w3.org/1999/xlink" data-llp-composed="true" id="my" class="lazy-line-painter">
+ <defs>
+  <style type="text/css">
+   
+    .str0 {stroke:#2B2A29;stroke-width:2.38;stroke-linecap:round;stroke-miterlimit:22.9256}
+    .fil0 {fill:none}
+   
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0 str0" d="M139.23 235.18c16.07,22.3 18.03,86.66 5.36,111.43 -0.9,1.78 -11.38,22.43 -11.32,23.24" data-llp-id="my-0" data-llp-duration="100" data-llp-delay="0" fill-opacity="1" style="stroke-linejoin: miter;" data-llp-stroke-join="miter"/>
+  <path class="fil0 str0" d="M127.28 261.27c13.59,-12.65 64.89,-47.37 52.14,-0.62 -3.43,12.58 38.78,-17.85 54.33,16.85 15.17,33.86 -39.91,111.85 -121.33,51.34" data-llp-id="my-1" data-llp-duration="500" data-llp-delay="100" fill-opacity="1" style="stroke-linejoin: miter;" data-llp-stroke-join="miter"/>
+  <path class="fil0 str0" d="M276.29 214.32c-0.8,-11.16 -43.57,-25.79 -67.78,5.91 -20.96,27.43 -21.72,64.53 4.07,88.25 50.3,46.24 124.89,-12.05 79.8,-35.06 -12.38,-6.32 -0.37,10.57 13.86,14.9 79.79,24.27 -31.73,-33.33 39.77,-3.83 48.77,20.11 29.82,-105.76 2.13,-97.44 -9.6,2.88 73.8,90.03 50.31,127.98 -23.48,37.95 -306.64,69.23 -309.22,55.27 -7.83,-42.27 271.08,-16.47 324.12,-108.9" data-llp-id="my-2" data-llp-duration="1500" data-llp-delay="600" fill-opacity="1" style="stroke-linejoin: miter;" data-llp-stroke-join="miter"/>
+ </g>
+</svg>
+</body>
+
+</html>
